@@ -1,0 +1,12 @@
+conv,target_fmax,200
+conv,conv.B1,II,0
+batchnorm,target_fmax,200
+pool,target_fmax,200
+pool,pool.B1,II,0
+pool,pool.B2,II,0
+conv1x1,target_fmax,200
+conv1x1,conv1x1.B1,II,0
+conv1x1,conv1x1.B2,II,0
+conv1x1,conv1x1.B4,II,0
+conv1x1,conv1x1.B6,II,0
+conv1x1,conv1x1.B8,II,0

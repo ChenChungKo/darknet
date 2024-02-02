@@ -1,0 +1,502 @@
+{
+  "columns":
+  ["", "Pipelined", "II", "Bottleneck", "Details"]
+  , "children":
+  [
+    {
+      "name":"Kernel: conv"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+            , "line":19
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"conv.B1"
+          , "data":
+          ["Yes", "1511165403", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":38
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":38
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":66
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":74
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 512"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 512"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Fully unrolled loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":66
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Unrolled by #pragma unroll"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Unrolled by #pragma unroll"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: batchnorm"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+            , "line":90
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: pool"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+            , "line":112
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"pool.B1"
+          , "data":
+          ["Yes", "795766633", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":115
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":115
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 219"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 219"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"Coalesced loop"
+              , "data":
+              ["n/a", "n/a", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":117
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Auto-coalesced"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"pool.B2"
+              , "data":
+              ["Yes", "226304032", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":125
+                  }
+                ]
+                , [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":125
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 205"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 205"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"Kernel: conv1x1"
+      , "data":
+      ["", "", ""]
+      , "debug":
+      [
+        [
+          {
+            "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+            , "line":153
+          }
+        ]
+      ]
+      , "details":
+      [
+        {
+          "type":"brief"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"ND-Range"
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Kernels"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#ipp1476408832230"
+            }
+          ]
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"4X Partially unrolled conv1x1.B1"
+          , "data":
+          ["Yes", "15797440", "n/a"]
+          , "debug":
+          [
+            [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":163
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":163
+              }
+            ]
+            , [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":182
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"brief"
+              , "text":"Thread capacity = 917"
+            }
+            , {
+              "type":"text"
+              , "text":"Thread capacity = 917"
+            }
+          ]
+          , "children":
+          [
+            {
+              "name":"conv1x1.B8"
+              , "data":
+              ["Yes", "577528622", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+                , [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 170"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 170"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"conv1x1.B6"
+              , "data":
+              ["Yes", "577528622", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+                , [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 170"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 170"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"conv1x1.B4"
+              , "data":
+              ["Yes", "577528622", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+                , [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 170"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 170"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+            , {
+              "name":"conv1x1.B2"
+              , "data":
+              ["Yes", "577528622", "n/a"]
+              , "debug":
+              [
+                [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+                , [
+                  {
+                    "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                    , "line":167
+                  }
+                ]
+              ]
+              , "details":
+              [
+                {
+                  "type":"brief"
+                  , "text":"Thread capacity = 170"
+                }
+                , {
+                  "type":"text"
+                  , "text":"Thread capacity = 170"
+                }
+              ]
+              , "children":
+              [
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

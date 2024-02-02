@@ -1,0 +1,4727 @@
+{
+  "columns":
+  ["", "ALUTs", "FFs", "RAMs", "DSPs", "Details"]
+  , "debug_enabled":"true"
+  , "type":"module"
+  , "total_percent":
+  [133.389, 87.4776, 54.3022, 140.078, 112.5]
+  , "total":
+  [95851, 119000, 720, 126]
+  , "name":"Kernel System"
+  , "max_resources":
+  [109572, 219144, 514, 112]
+  , "children":
+  [
+    {
+      "name":"Board interface"
+      , "type":"resource"
+      , "data":
+      [2160, 1908, 20, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Platform interface logic."
+        }
+      ]
+    }
+    , {
+      "name":"Global interconnect"
+      , "type":"resource"
+      , "data":
+      [2396, 7875, 10, 0]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Global interconnect for 16 global loads and 7 global stores. Reduce number of global loads and stores to simplify global interconnect."
+        }
+        , {
+          "type":"text"
+          , "text":"See %L for more information"
+          , "links":
+          [
+            {
+              "guide":"Best Practices Guide : Global Memory Interconnect"
+              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#hnj1476724450050"
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"batchnorm"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [13.7746, 9.07987, 5.57214, 18.0934, 8.92857]
+      , "total_kernel_resources":
+      [9949, 12211, 93, 10]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1574, 1505, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"batchnorm.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [613, 897, 2, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [613, 897, 2, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [213, 151, 2, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [306, 272, 0, 1]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:93"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":93
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:96"
+                  , "type":"resource"
+                  , "data":
+                  [6649, 7249, 73, 7]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":96
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"'sqrtf' Function Call"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [567, 418, 3, 2.5]
+                    }
+                    , {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [1990, 1434, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Divide"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1014, 1065, 5, 3.5]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Floating-point Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":5
+                      , "data":
+                      [1742, 3342, 65, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced LSU"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Load uses a Streaming LSU"
+                        }
+                      ]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [45, 32, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:98"
+                  , "type":"resource"
+                  , "data":
+                  [11, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":98
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:99"
+                  , "type":"resource"
+                  , "data":
+                  [301, 1072, 8, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":99
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [105, 8, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [13, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [183, 1064, 8, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:101"
+                  , "type":"resource"
+                  , "data":
+                  [183, 1064, 8, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":101
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [183, 1064, 8, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"conv"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [38.6963, 27.5326, 14.1035, 28.5992, 50]
+      , "total_kernel_resources":
+      [30168, 30907, 147, 56]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1740, 1597, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"darknet.cl:20 (weight)"
+          , "type":"resource"
+          , "data":
+          [0, 0, 7, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":20
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Local memory":"Optimal"
+              , "Requested size":"256 bytes"
+              , "Implemented size":"768 bytes"
+              , "Number of banks":"1"
+              , "Bank width":"256 bits"
+              , "Bank depth":"8 words"
+              , "Total replication":"3"
+              , "Additional information":
+              [
+                {
+                  "type":"text"
+                  , "text":"Requested size 256 bytes, implemented size 768 bytes, replicated 3 times total, stall-free, 1 read and 1 write. "
+                }
+                , {
+                  "type":"text"
+                  , "text":"Replicated 3 times to efficiently support multiple simultaneous workgroups. This replication resulted in no increase in actual block RAM usage."
+                }
+              ]
+              , "Reference":
+              [
+                {
+                  "type":"text"
+                  , "text":"See %L for more information."
+                  , "links":
+                  [
+                    {
+                      "guide":"Best Practices Guide : Local Memory"
+                      , "link":"https://www.altera.com/documentation/mwh1391807516407.html#chn1469549457114"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"darknet.cl:21 (input)"
+          , "type":"resource"
+          , "data":
+          [0, 0, 7, 0]
+          , "debug":
+          [
+            [
+              {
+                "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                , "line":21
+              }
+            ]
+          ]
+          , "details":
+          [
+            {
+              "type":"table"
+              , "Local memory":"Optimal"
+              , "Requested size":"256 bytes"
+              , "Implemented size":"768 bytes"
+              , "Number of banks":"1"
+              , "Bank width":"256 bits"
+              , "Bank depth":"8 words"
+              , "Total replication":"3"
+              , "Additional information":
+              [
+                {
+                  "type":"text"
+                  , "text":"Requested size 256 bytes, implemented size 768 bytes, replicated 3 times total, stall-free, 1 read and 1 write. "
+                }
+                , {
+                  "type":"text"
+                  , "text":"Replicated 3 times to efficiently support multiple simultaneous workgroups. This replication resulted in no increase in actual block RAM usage."
+                }
+              ]
+              , "Reference":
+              [
+                {
+                  "type":"text"
+                  , "text":"See %L for more information."
+                  , "links":
+                  [
+                    {
+                      "guide":"Best Practices Guide : Local Memory"
+                      , "link":"https://www.altera.com/documentation/mwh1391807516407.html#chn1469549457114"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [2425, 4012, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [2425, 4012, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [54, 140, 5, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"darknet.cl:31"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":31
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:33"
+                  , "type":"resource"
+                  , "data":
+                  [1243, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":33
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":28
+                      , "data":
+                      [924, 0, 0, 0]
+                    }
+                    , {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":29
+                      , "data":
+                      [319, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:34"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":34
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:38"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":38
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:40"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":40
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:49"
+                  , "type":"resource"
+                  , "data":
+                  [712, 171, 4, 8]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":49
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Divide"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [712, 171, 4, 8]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:50"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":50
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:51"
+                  , "type":"resource"
+                  , "data":
+                  [165, 0, 0, 4]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":51
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:55"
+                  , "type":"resource"
+                  , "data":
+                  [167, 1, 0, 4]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":55
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv.B1"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [3620, 4982, 7, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [3620, 4982, 7, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [17, 203, 7, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [35, 67, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Work-group limiter exit"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [34, 66, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:38"
+                  , "type":"resource"
+                  , "data":
+                  [102, 2, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":38
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:40"
+                  , "type":"resource"
+                  , "data":
+                  [3081, 4323, 43, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":40
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3014, 4299, 43, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [34, 24, 0, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Local-pipelined never-stall LSU"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Stall-free write to memory declared on darknet.cl:20."
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"See %L for more information"
+                          , "links":
+                          [
+                            {
+                              "guide":"Best Practices Guide : Load-Store Units"
+                              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#yeo1491314105959"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:42"
+                  , "type":"resource"
+                  , "data":
+                  [33, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":42
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:44"
+                  , "type":"resource"
+                  , "data":
+                  [713, 172, 4, 8]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":44
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Divide"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [713, 172, 4, 8]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:45"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":45
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:46"
+                  , "type":"resource"
+                  , "data":
+                  [712, 171, 4, 8]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":46
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Divide"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [712, 171, 4, 8]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:47"
+                  , "type":"resource"
+                  , "data":
+                  [33, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":47
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:48"
+                  , "type":"resource"
+                  , "data":
+                  [132, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":48
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:50"
+                  , "type":"resource"
+                  , "data":
+                  [33, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":50
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:51"
+                  , "type":"resource"
+                  , "data":
+                  [33, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":51
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:52"
+                  , "type":"resource"
+                  , "data":
+                  [198, 0, 0, 4]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":52
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:55"
+                  , "type":"resource"
+                  , "data":
+                  [107, 5, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":55
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":5
+                      , "data":
+                      [105, 3, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":4
+                      , "data":
+                      [2, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:59"
+                  , "type":"resource"
+                  , "data":
+                  [3040, 4299, 43, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":59
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3014, 4299, 43, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:61"
+                  , "type":"resource"
+                  , "data":
+                  [34, 24, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":61
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [34, 24, 0, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Local-pipelined never-stall LSU"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Stall-free write to memory declared on darknet.cl:21."
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"See %L for more information"
+                          , "links":
+                          [
+                            {
+                              "guide":"Best Practices Guide : Load-Store Units"
+                              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#yeo1491314105959"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:68"
+                  , "type":"resource"
+                  , "data":
+                  [2468, 2450, 0, 8]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":68
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":8
+                      , "data":
+                      [2192, 1920, 0, 8]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [276, 530, 0, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Local-pipelined never-stall LSU"
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Stall-free read from memory declared on darknet.cl:20."
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"See %L for more information"
+                          , "links":
+                          [
+                            {
+                              "guide":"Best Practices Guide : Load-Store Units"
+                              , "link":"https://www.altera.com/documentation/mwh1391807516407.html#yeo1491314105959"
+                            }
+                          ]
+                        }
+                        , {
+                          "type":"text"
+                          , "text":"Stall-free read from memory declared on darknet.cl:21."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:69"
+                  , "type":"resource"
+                  , "data":
+                  [7960, 5736, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":69
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":8
+                      , "data":
+                      [7960, 5736, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [206, 328, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [206, 328, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [145, 63, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [32, 32, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:75"
+                  , "type":"resource"
+                  , "data":
+                  [497, 2128, 16, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":75
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [366, 2128, 16, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"conv1x1"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [61.0432, 39.1806, 25.5029, 80.5447, 32.1429]
+      , "total_kernel_resources":
+      [42931, 55888, 414, 36]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1574, 1505, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [379, 669, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [379, 669, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [478, 222, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"darknet.cl:157"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":157
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:158"
+                  , "type":"resource"
+                  , "data":
+                  [132, 0, 0, 4]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":158
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:169"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":169
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:172"
+                  , "type":"resource"
+                  , "data":
+                  [70, 2, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":172
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:179"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":179
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B1"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [1319, 2170, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1319, 2170, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [27, 66, 2, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [70, 2, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:170"
+                  , "type":"resource"
+                  , "data":
+                  [1320, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":170
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":29
+                      , "data":
+                      [957, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":30
+                      , "data":
+                      [330, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:172"
+                  , "type":"resource"
+                  , "data":
+                  [71, 3, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":172
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [418, 558, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [418, 558, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [231, 114, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1027, 749, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:167"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":167
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:174"
+                  , "type":"resource"
+                  , "data":
+                  [6565, 8838, 86, 5]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":174
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [6028, 8598, 86, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B3"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [250, 310, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [250, 310, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [205, 79, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [26, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:163"
+                  , "type":"resource"
+                  , "data":
+                  [18.3333, 0.666667, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":163
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [7.33333, 0.666667, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [11, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:167"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":167
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:170"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":170
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:172"
+                  , "type":"resource"
+                  , "data":
+                  [71, 3, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":172
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:179"
+                  , "type":"resource"
+                  , "data":
+                  [481, 2208, 17, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":179
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [383, 2208, 17, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced write-ack LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:182"
+                  , "type":"resource"
+                  , "data":
+                  [3.66667, 0.333333, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":182
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3.66667, 0.333333, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B4"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [418, 558, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [418, 558, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [231, 114, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1027, 749, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:167"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":167
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:174"
+                  , "type":"resource"
+                  , "data":
+                  [6565, 8838, 86, 5]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":174
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [6028, 8598, 86, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B5"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [205, 317, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [205, 317, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [165, 71, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [26, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:163"
+                  , "type":"resource"
+                  , "data":
+                  [18.3333, 0.666667, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":163
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [7.33333, 0.666667, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [11, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:170"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":170
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:172"
+                  , "type":"resource"
+                  , "data":
+                  [71, 3, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":172
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:179"
+                  , "type":"resource"
+                  , "data":
+                  [481, 2208, 17, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":179
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [383, 2208, 17, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced write-ack LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:182"
+                  , "type":"resource"
+                  , "data":
+                  [3.66667, 0.333333, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":182
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3.66667, 0.333333, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B6"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [418, 558, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [418, 558, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [231, 114, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1027, 749, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:167"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":167
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:174"
+                  , "type":"resource"
+                  , "data":
+                  [6565, 8838, 86, 5]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":174
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [6028, 8598, 86, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B7"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [205, 317, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [205, 317, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [165, 71, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [26, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:163"
+                  , "type":"resource"
+                  , "data":
+                  [18.3333, 0.666667, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":163
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [7.33333, 0.666667, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [11, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:170"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":170
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:172"
+                  , "type":"resource"
+                  , "data":
+                  [71, 3, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":172
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [1, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [70, 2, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:179"
+                  , "type":"resource"
+                  , "data":
+                  [481, 2208, 17, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":179
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [383, 2208, 17, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced write-ack LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:182"
+                  , "type":"resource"
+                  , "data":
+                  [3.66667, 0.333333, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":182
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3.66667, 0.333333, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B8"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [418, 558, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [418, 558, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [231, 114, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1027, 749, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:167"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":167
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:174"
+                  , "type":"resource"
+                  , "data":
+                  [6565, 8838, 86, 5]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":174
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [274, 240, 0, 1]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [6028, 8598, 86, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced cached LSU.  Load with a private 64 kilobit cache. Cache is not shared with any other load. It is flushed on kernel start. Use Dynamic Profiler to verify cache effectiveness. Other kernels should not be updating the data in global memory while this kernel is using it. Cache is created when memory access pattern is data-dependent or appears to be repetitive. Simplify access pattern or mark pointer as 'volatile' to disable generation of this cache."
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"conv1x1.B9"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [53, 101, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [53, 101, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [144, 60, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [36, 36, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"And"
+                      , "type":"resource"
+                      , "count":7
+                      , "data":
+                      [2, 2, 0, 0]
+                    }
+                    , {
+                      "name":"Or"
+                      , "type":"resource"
+                      , "count":4
+                      , "data":
+                      [2, 2, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [32, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:163"
+                  , "type":"resource"
+                  , "data":
+                  [75.3333, 1.66667, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":163
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":3
+                      , "data":
+                      [42.3333, 1.66667, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:179"
+                  , "type":"resource"
+                  , "data":
+                  [481, 2208, 17, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":179
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"64-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [65, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [383, 2208, 17, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced write-ack LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:182"
+                  , "type":"resource"
+                  , "data":
+                  [3.66667, 0.333333, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":182
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3.66667, 0.333333, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+    , {
+      "name":"pool"
+      , "compute_units":1
+      , "type":"function"
+      , "total_percent":
+      [11.4628, 7.52656, 4.65949, 7.00389, 21.4286]
+      , "total_kernel_resources":
+      [8247, 10211, 36, 24]
+      , "details":
+      [
+        {
+          "type":"text"
+          , "text":"Number of compute units: 1"
+        }
+      ]
+      , "children":
+      [
+        {
+          "name":"Function overhead"
+          , "type":"resource"
+          , "data":
+          [1574, 1505, 0, 0]
+          , "details":
+          [
+            {
+              "type":"text"
+              , "text":"Kernel dispatch logic."
+            }
+          ]
+        }
+        , {
+          "name":"pool.B0"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [186, 369, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [186, 369, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [273, 143, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"darknet.cl:115"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":115
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:121"
+                  , "type":"resource"
+                  , "data":
+                  [37, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":121
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:125"
+                  , "type":"resource"
+                  , "data":
+                  [101, 1, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":125
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:130"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":130
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:140"
+                  , "type":"resource"
+                  , "data":
+                  [66, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":140
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"pool.B1"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [244, 401, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [244, 401, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [252, 132, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"darknet.cl:130"
+                  , "type":"resource"
+                  , "data":
+                  [165, 0, 0, 4]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":130
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [132, 0, 0, 4]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:140"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":140
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"pool.B2"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"State"
+              , "type":"resource"
+              , "data":
+              [1609, 2304, 0, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Resources for live values and control logic. To reduce this area:"
+                  , "details":
+                  [
+                    {
+                      "type":"text"
+                      , "text":"reduce size of local variables"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce scope of local variables, localizing them as much as possible"
+                    }
+                    , {
+                      "type":"text"
+                      , "text":"reduce number of nested loops"
+                    }
+                  ]
+                }
+              ]
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [1609, 2304, 0, 0]
+                }
+              ]
+            }
+            , {
+              "name":"Cluster logic"
+              , "type":"resource"
+              , "data":
+              [113, 125, 3, 0]
+              , "details":
+              [
+                {
+                  "type":"text"
+                  , "text":"Logic required to efficiently support sets of operations that do not stall. This area cannot be affected directly."
+                }
+              ]
+            }
+            , {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [35, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [35, 1, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:125"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":125
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:127"
+                  , "type":"resource"
+                  , "data":
+                  [712, 171, 4, 8]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":127
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Divide"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [712, 171, 4, 8]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:128"
+                  , "type":"resource"
+                  , "data":
+                  [99, 0, 0, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":128
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:130"
+                  , "type":"resource"
+                  , "data":
+                  [635, 2018, 13, 2]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":130
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [66, 0, 0, 0]
+                    }
+                    , {
+                      "name":"32-bit Integer Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [66, 0, 0, 2]
+                    }
+                    , {
+                      "name":"32-bit Integer Subtract"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Load"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [470, 2018, 13, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Load uses a Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:133"
+                  , "type":"resource"
+                  , "data":
+                  [1191, 836, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":133
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [995, 717, 0, 0]
+                    }
+                    , {
+                      "name":"Floating-point Multiply"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [183, 119, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [13, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:136"
+                  , "type":"resource"
+                  , "data":
+                  [150, 40, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":136
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Floating-point Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [105, 8, 0, 0]
+                    }
+                    , {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [45, 32, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+        , {
+          "name":"pool.B3"
+          , "type":"basicblock"
+          , "children":
+          [
+            {
+              "name":"Computation"
+              , "type":"resource"
+              , "children":
+              [
+                {
+                  "name":"No Source Line"
+                  , "type":"resource"
+                  , "data":
+                  [48, 32, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":""
+                        , "line":0
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [48, 32, 0, 0]
+                    }
+                  ]
+                }
+                , {
+                  "name":"darknet.cl:115"
+                  , "type":"resource"
+                  , "data":
+                  [44, 1, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":115
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [11, 1, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:117"
+                  , "type":"resource"
+                  , "data":
+                  [40.3333, 0.666667, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":117
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":2
+                      , "data":
+                      [7.33333, 0.666667, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:121"
+                  , "type":"resource"
+                  , "data":
+                  [26, 0, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":121
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Select"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [26, 0, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:140"
+                  , "type":"resource"
+                  , "data":
+                  [399, 2128, 16, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":140
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"32-bit Integer Add"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [33, 0, 0, 0]
+                    }
+                    , {
+                      "name":"Store"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [366, 2128, 16, 0]
+                      , "details":
+                      [
+                        {
+                          "type":"text"
+                          , "text":"Store uses a Burst-coalesced LSU"
+                        }
+                      ]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+                , {
+                  "name":"darknet.cl:141"
+                  , "type":"resource"
+                  , "data":
+                  [3.66667, 0.333333, 0, 0]
+                  , "debug":
+                  [
+                    [
+                      {
+                        "filename":"d:/intelFPGA/18.1/hld/board/terasic/de10_nano/test/accelerator/device/darknet.cl"
+                        , "line":141
+                      }
+                    ]
+                  ]
+                  , "children":
+                  [
+                    {
+                      "name":"Integer Compare"
+                      , "type":"resource"
+                      , "count":1
+                      , "data":
+                      [3.66667, 0.333333, 0, 0]
+                    }
+                  ]
+                  , "replace_name":"true"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
